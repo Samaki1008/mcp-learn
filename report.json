@@ -1,0 +1,114 @@
+[
+ {
+   "name": "My List",
+   "uri": "projects/FUSE/features/myList.feature",
+   "elements": [
+     {
+       "type": "scenario",
+       "name": "Add show to My List",
+       "line": 10,
+       "tags": [{ "name": "@P0" }, { "name": "@mylist" }, { "name": "@C11111" }],
+       "steps": [
+         { "keyword": "Before", "hidden": true, "result": { "status": "passed", "duration": 2000000 } },
+         { "keyword": "Given ", "name": "I open the app as \"authenticated\" user", "result": { "status": "passed", "duration": 38000000000 } },
+         { "keyword": "When ", "name": "I Add to My List from \"Series\" content details page", "result": { "status": "passed", "duration": 12000000000 } },
+         { "keyword": "Then ", "name": "I see the toast \"Added To My List\"", "result": { "status": "passed", "duration": 1500000000 } },
+         { "keyword": "After", "hidden": true, "result": { "status": "passed", "duration": 3000000 } }
+       ]
+     },
+     {
+       "type": "scenario",
+       "name": "Remove show from My List",
+       "line": 25,
+       "tags": [{ "name": "@P1" }, { "name": "@mylist" }, { "name": "@C22222" }],
+       "steps": [
+         { "keyword": "Before", "hidden": true, "result": { "status": "passed", "duration": 2000000 } },
+         { "keyword": "Given ", "name": "I open the app as \"authenticated\" user", "result": { "status": "passed", "duration": 37000000000 } },
+         {
+           "keyword": "When ",
+           "name": "I Remove from My List from content details page",
+           "result": {
+             "status": "failed",
+             "duration": 30000000000,
+             "error_message": "NoSuchElementError: no such element: Unable to locate element: {\"method\":\"id\",\"selector\":\"myListRemoveButton\"}\n    at FusePage.click (projects/FUSE/vizio/pages/contentDetailsPage.js:212:11)\n    at World.<anonymous> (projects/FUSE/features/stepDefinition/myList_steps.js:48:5)"
+           }
+         },
+         { "keyword": "Then ", "name": "I see the toast \"Removed From My List\"", "result": { "status": "skipped", "duration": 0 } },
+         { "keyword": "After", "hidden": true, "result": { "status": "passed", "duration": 3000000 } }
+       ]
+     },
+     {
+       "type": "scenario",
+       "name": "My List shows empty state for new user",
+       "line": 40,
+       "tags": [{ "name": "@P0" }, { "name": "@mylist" }, { "name": "@C33333" }],
+       "steps": [
+         { "keyword": "Before", "hidden": true, "result": { "status": "passed", "duration": 2000000 } },
+         { "keyword": "Given ", "name": "I open the app as \"new\" user", "result": { "status": "passed", "duration": 41000000000 } },
+         { "keyword": "When ", "name": "I navigate to My Stuff > My List tab", "result": { "status": "passed", "duration": 34000000000 } },
+         {
+           "keyword": "Then ",
+           "name": "I see the My List empty state message",
+           "result": {
+             "status": "failed",
+             "duration": 60000000000,
+             "error_message": "TimeoutError: waitUntil condition timed out after 60000ms\n    at FusePage.waitForDisplayed (projects/FUSE/vizio/pages/myStuffPage.js:88:9)"
+           }
+         },
+         { "keyword": "After", "hidden": true, "result": { "status": "passed", "duration": 3000000 } }
+       ]
+     }
+   ]
+ },
+ {
+   "name": "Home",
+   "uri": "projects/FUSE/features/home.feature",
+   "elements": [
+     {
+       "type": "scenario",
+       "name": "Home rails load for authenticated user",
+       "line": 8,
+       "tags": [{ "name": "@P0" }, { "name": "@home" }, { "name": "@C44444" }],
+       "steps": [
+         { "keyword": "Before", "hidden": true, "result": { "status": "passed", "duration": 2000000 } },
+         { "keyword": "Given ", "name": "I open the app as \"authenticated\" user", "result": { "status": "passed", "duration": 36000000000 } },
+         { "keyword": "Then ", "name": "I see at least 3 rails on Home", "result": { "status": "passed", "duration": 4000000000 } },
+         { "keyword": "After", "hidden": true, "result": { "status": "passed", "duration": 3000000 } }
+       ]
+     },
+     {
+       "type": "scenario",
+       "name": "Hero banner autoplays trailer",
+       "line": 20,
+       "tags": [{ "name": "@P2" }, { "name": "@home" }, { "name": "@C55555" }],
+       "steps": [
+         { "keyword": "Before", "hidden": true, "result": { "status": "passed", "duration": 2000000 } },
+         { "keyword": "Given ", "name": "I open the app as \"authenticated\" user", "result": { "status": "passed", "duration": 35000000000 } },
+         { "keyword": "Then ", "name": "I see the hero trailer start playing within 5 seconds", "result": { "status": "undefined", "duration": 0 } },
+         { "keyword": "After", "hidden": true, "result": { "status": "passed", "duration": 3000000 } }
+       ]
+     },
+     {
+       "type": "scenario",
+       "name": "Continue Watching rail shows last played title",
+       "line": 32,
+       "tags": [{ "name": "@P1" }, { "name": "@home" }, { "name": "@C66666" }],
+       "steps": [
+         {
+           "keyword": "Before",
+           "hidden": true,
+           "result": {
+             "status": "failed",
+             "duration": 5000000000,
+             "error_message": "Error: connect ECONNREFUSED 127.0.0.1:4723 - could not start Appium session"
+           }
+         },
+         { "keyword": "Given ", "name": "I open the app as \"authenticated\" user", "result": { "status": "skipped", "duration": 0 } },
+         { "keyword": "Then ", "name": "I see the last played title first in Continue Watching", "result": { "status": "skipped", "duration": 0 } },
+         { "keyword": "After", "hidden": true, "result": { "status": "passed", "duration": 3000000 } }
+       ]
+     }
+   ]
+ }
+]
+
